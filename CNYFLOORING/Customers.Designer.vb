@@ -23,7 +23,6 @@ Partial Class Customers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Customers))
         Dim IDLabel As System.Windows.Forms.Label
         Dim FirstNameLabel As System.Windows.Forms.Label
         Dim LastNameLabel As System.Windows.Forms.Label
@@ -33,22 +32,23 @@ Partial Class Customers
         Dim PhoneNumberLabel As System.Windows.Forms.Label
         Dim DateLabel As System.Windows.Forms.Label
         Dim JobDescriptionLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Customers))
         Me.CNYFLOORING2DataSet = New CNYFLOORING.CNYFLOORING2DataSet()
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerTableAdapter = New CNYFLOORING.CNYFLOORING2DataSetTableAdapters.CustomerTableAdapter()
         Me.TableAdapterManager = New CNYFLOORING.CNYFLOORING2DataSetTableAdapters.TableAdapterManager()
         Me.CustomerBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.CustomerBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
@@ -83,6 +83,87 @@ Partial Class Customers
         CType(Me.CustomerBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CustomerBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IDLabel
+        '
+        IDLabel.AutoSize = True
+        IDLabel.Location = New System.Drawing.Point(12, 37)
+        IDLabel.Name = "IDLabel"
+        IDLabel.Size = New System.Drawing.Size(21, 13)
+        IDLabel.TabIndex = 1
+        IDLabel.Text = "ID:"
+        '
+        'FirstNameLabel
+        '
+        FirstNameLabel.AutoSize = True
+        FirstNameLabel.Location = New System.Drawing.Point(12, 63)
+        FirstNameLabel.Name = "FirstNameLabel"
+        FirstNameLabel.Size = New System.Drawing.Size(60, 13)
+        FirstNameLabel.TabIndex = 3
+        FirstNameLabel.Text = "First Name:"
+        '
+        'LastNameLabel
+        '
+        LastNameLabel.AutoSize = True
+        LastNameLabel.Location = New System.Drawing.Point(12, 89)
+        LastNameLabel.Name = "LastNameLabel"
+        LastNameLabel.Size = New System.Drawing.Size(61, 13)
+        LastNameLabel.TabIndex = 5
+        LastNameLabel.Text = "Last Name:"
+        '
+        'AddressLabel
+        '
+        AddressLabel.AutoSize = True
+        AddressLabel.Location = New System.Drawing.Point(12, 115)
+        AddressLabel.Name = "AddressLabel"
+        AddressLabel.Size = New System.Drawing.Size(48, 13)
+        AddressLabel.TabIndex = 7
+        AddressLabel.Text = "Address:"
+        '
+        'CityLabel
+        '
+        CityLabel.AutoSize = True
+        CityLabel.Location = New System.Drawing.Point(12, 141)
+        CityLabel.Name = "CityLabel"
+        CityLabel.Size = New System.Drawing.Size(27, 13)
+        CityLabel.TabIndex = 9
+        CityLabel.Text = "City:"
+        '
+        'StateLabel
+        '
+        StateLabel.AutoSize = True
+        StateLabel.Location = New System.Drawing.Point(12, 167)
+        StateLabel.Name = "StateLabel"
+        StateLabel.Size = New System.Drawing.Size(35, 13)
+        StateLabel.TabIndex = 11
+        StateLabel.Text = "State:"
+        '
+        'PhoneNumberLabel
+        '
+        PhoneNumberLabel.AutoSize = True
+        PhoneNumberLabel.Location = New System.Drawing.Point(12, 193)
+        PhoneNumberLabel.Name = "PhoneNumberLabel"
+        PhoneNumberLabel.Size = New System.Drawing.Size(81, 13)
+        PhoneNumberLabel.TabIndex = 13
+        PhoneNumberLabel.Text = "Phone Number:"
+        '
+        'DateLabel
+        '
+        DateLabel.AutoSize = True
+        DateLabel.Location = New System.Drawing.Point(12, 220)
+        DateLabel.Name = "DateLabel"
+        DateLabel.Size = New System.Drawing.Size(33, 13)
+        DateLabel.TabIndex = 15
+        DateLabel.Text = "Date:"
+        '
+        'JobDescriptionLabel
+        '
+        JobDescriptionLabel.AutoSize = True
+        JobDescriptionLabel.Location = New System.Drawing.Point(12, 245)
+        JobDescriptionLabel.Name = "JobDescriptionLabel"
+        JobDescriptionLabel.Size = New System.Drawing.Size(83, 13)
+        JobDescriptionLabel.TabIndex = 17
+        JobDescriptionLabel.Text = "Job Description:"
         '
         'CNYFLOORING2DataSet
         '
@@ -122,6 +203,31 @@ Partial Class Customers
         Me.CustomerBindingNavigator.TabIndex = 0
         Me.CustomerBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -154,16 +260,9 @@ Partial Class Customers
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -186,26 +285,8 @@ Partial Class Customers
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'CustomerBindingNavigatorSaveItem
         '
@@ -215,15 +296,6 @@ Partial Class Customers
         Me.CustomerBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.CustomerBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'IDLabel
-        '
-        IDLabel.AutoSize = True
-        IDLabel.Location = New System.Drawing.Point(12, 37)
-        IDLabel.Name = "IDLabel"
-        IDLabel.Size = New System.Drawing.Size(21, 13)
-        IDLabel.TabIndex = 1
-        IDLabel.Text = "ID:"
-        '
         'IDTextBox
         '
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "ID", True))
@@ -231,15 +303,6 @@ Partial Class Customers
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(200, 20)
         Me.IDTextBox.TabIndex = 2
-        '
-        'FirstNameLabel
-        '
-        FirstNameLabel.AutoSize = True
-        FirstNameLabel.Location = New System.Drawing.Point(12, 63)
-        FirstNameLabel.Name = "FirstNameLabel"
-        FirstNameLabel.Size = New System.Drawing.Size(60, 13)
-        FirstNameLabel.TabIndex = 3
-        FirstNameLabel.Text = "First Name:"
         '
         'FirstNameTextBox
         '
@@ -249,15 +312,6 @@ Partial Class Customers
         Me.FirstNameTextBox.Size = New System.Drawing.Size(200, 20)
         Me.FirstNameTextBox.TabIndex = 4
         '
-        'LastNameLabel
-        '
-        LastNameLabel.AutoSize = True
-        LastNameLabel.Location = New System.Drawing.Point(12, 89)
-        LastNameLabel.Name = "LastNameLabel"
-        LastNameLabel.Size = New System.Drawing.Size(61, 13)
-        LastNameLabel.TabIndex = 5
-        LastNameLabel.Text = "Last Name:"
-        '
         'LastNameTextBox
         '
         Me.LastNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "LastName", True))
@@ -265,15 +319,6 @@ Partial Class Customers
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(200, 20)
         Me.LastNameTextBox.TabIndex = 6
-        '
-        'AddressLabel
-        '
-        AddressLabel.AutoSize = True
-        AddressLabel.Location = New System.Drawing.Point(12, 115)
-        AddressLabel.Name = "AddressLabel"
-        AddressLabel.Size = New System.Drawing.Size(48, 13)
-        AddressLabel.TabIndex = 7
-        AddressLabel.Text = "Address:"
         '
         'AddressTextBox
         '
@@ -283,15 +328,6 @@ Partial Class Customers
         Me.AddressTextBox.Size = New System.Drawing.Size(200, 20)
         Me.AddressTextBox.TabIndex = 8
         '
-        'CityLabel
-        '
-        CityLabel.AutoSize = True
-        CityLabel.Location = New System.Drawing.Point(12, 141)
-        CityLabel.Name = "CityLabel"
-        CityLabel.Size = New System.Drawing.Size(27, 13)
-        CityLabel.TabIndex = 9
-        CityLabel.Text = "City:"
-        '
         'CityTextBox
         '
         Me.CityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "City", True))
@@ -299,15 +335,6 @@ Partial Class Customers
         Me.CityTextBox.Name = "CityTextBox"
         Me.CityTextBox.Size = New System.Drawing.Size(200, 20)
         Me.CityTextBox.TabIndex = 10
-        '
-        'StateLabel
-        '
-        StateLabel.AutoSize = True
-        StateLabel.Location = New System.Drawing.Point(12, 167)
-        StateLabel.Name = "StateLabel"
-        StateLabel.Size = New System.Drawing.Size(35, 13)
-        StateLabel.TabIndex = 11
-        StateLabel.Text = "State:"
         '
         'StateTextBox
         '
@@ -317,15 +344,6 @@ Partial Class Customers
         Me.StateTextBox.Size = New System.Drawing.Size(200, 20)
         Me.StateTextBox.TabIndex = 12
         '
-        'PhoneNumberLabel
-        '
-        PhoneNumberLabel.AutoSize = True
-        PhoneNumberLabel.Location = New System.Drawing.Point(12, 193)
-        PhoneNumberLabel.Name = "PhoneNumberLabel"
-        PhoneNumberLabel.Size = New System.Drawing.Size(81, 13)
-        PhoneNumberLabel.TabIndex = 13
-        PhoneNumberLabel.Text = "Phone Number:"
-        '
         'PhoneNumberTextBox
         '
         Me.PhoneNumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerBindingSource, "PhoneNumber", True))
@@ -334,15 +352,6 @@ Partial Class Customers
         Me.PhoneNumberTextBox.Size = New System.Drawing.Size(200, 20)
         Me.PhoneNumberTextBox.TabIndex = 14
         '
-        'DateLabel
-        '
-        DateLabel.AutoSize = True
-        DateLabel.Location = New System.Drawing.Point(12, 220)
-        DateLabel.Name = "DateLabel"
-        DateLabel.Size = New System.Drawing.Size(33, 13)
-        DateLabel.TabIndex = 15
-        DateLabel.Text = "Date:"
-        '
         'DateDateTimePicker
         '
         Me.DateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.CustomerBindingSource, "Date", True))
@@ -350,15 +359,6 @@ Partial Class Customers
         Me.DateDateTimePicker.Name = "DateDateTimePicker"
         Me.DateDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.DateDateTimePicker.TabIndex = 16
-        '
-        'JobDescriptionLabel
-        '
-        JobDescriptionLabel.AutoSize = True
-        JobDescriptionLabel.Location = New System.Drawing.Point(12, 245)
-        JobDescriptionLabel.Name = "JobDescriptionLabel"
-        JobDescriptionLabel.Size = New System.Drawing.Size(83, 13)
-        JobDescriptionLabel.TabIndex = 17
-        JobDescriptionLabel.Text = "Job Description:"
         '
         'JobDescriptionTextBox
         '
@@ -458,7 +458,7 @@ Partial Class Customers
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'Form1
+        'Customers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -492,7 +492,7 @@ Partial Class Customers
         Me.Controls.Add(JobDescriptionLabel)
         Me.Controls.Add(Me.JobDescriptionTextBox)
         Me.Controls.Add(Me.CustomerBindingNavigator)
-        Me.Name = "Form1"
+        Me.Name = "Customers"
         Me.Text = "Form1"
         CType(Me.CNYFLOORING2DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

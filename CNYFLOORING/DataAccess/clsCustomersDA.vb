@@ -74,7 +74,7 @@ Public Class clsCustomersDA
             ' the connection if made
             ' create a SQL string
             Dim strQuery As String
-            strQuery = "DELETE FROM Customer WHERE AccountID = ?"
+            strQuery = "DELETE FROM Customer WHERE ID = ?"
 
             ' Setup ADO component
             ' create a data adapter object
@@ -83,7 +83,7 @@ Public Class clsCustomersDA
             Dim dbCommand As New OleDbCommand
 
             ' add a new parameter
-            dbCommand.Parameters.Add(New OleDbParameter("@AccountID", aPrimaryKey))
+            dbCommand.Parameters.Add(New OleDbParameter("@ID", aPrimaryKey))
 
             ' configure the components
             dbCommand.CommandText = strQuery
@@ -108,10 +108,10 @@ Public Class clsCustomersDA
 
     ' Method Name:  AddRecord
     ' Purpose:      To add a record from the database for this entity
-    ' Parameter:    Object (aEvent) - clsEvents
+    ' Parameter:    Object (aCustomer) - clsCutomer
     ' Return:       Result (number of rows affected) - Integer
 
-    Public Shared Function AddRecord(ByVal aEvent As clsCustomers) As Integer
+    Public Shared Function AddRecord(ByVal aCustomer As clsCustomers) As Integer
         Dim dbConnection As OleDbConnection = Nothing
         ' error handling
         Try
@@ -127,7 +127,7 @@ Public Class clsCustomersDA
             ' the connection if made
             ' create a SQL string
             Dim strQuery As String
-            strQuery = "INSERT INTO Event ([AccountID], [FirstName], [LastName], [Address], [City], [State], [PhoneNumber], [Date], [JobDescription]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            strQuery = "INSERT INTO Customer ([ID], [FirstName], [LastName], [Address], [City], [State], [PhoneNumber], [Date], [JobDescription]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
             ' Setup ADO component
             ' create a data adapter object
@@ -136,14 +136,14 @@ Public Class clsCustomersDA
             Dim dbCommand As New OleDbCommand
 
             ' add new parameters
-            dbCommand.Parameters.Add(New OleDbParameter("@AccountID", aCustomer.AccountID))
+            dbCommand.Parameters.Add(New OleDbParameter("@ID", aCustomer.ID))
             dbCommand.Parameters.Add(New OleDbParameter("@FirstName", aCustomer.FirstName))
             dbCommand.Parameters.Add(New OleDbParameter("@LastName", aCustomer.LastName))
             dbCommand.Parameters.Add(New OleDbParameter("@Address", aCustomer.Address))
             dbCommand.Parameters.Add(New OleDbParameter("@City", aCustomer.City))
             dbCommand.Parameters.Add(New OleDbParameter("@State", aCustomer.State))
             dbCommand.Parameters.Add(New OleDbParameter("@PhoneNumber", aCustomer.PhoneNumber))
-            dbCommand.Parameters.Add(New OleDbParameter("@Date", aCustomer.Date))
+            dbCommand.Parameters.Add(New OleDbParameter("@Date", aCustomer.DDate))
             dbCommand.Parameters.Add(New OleDbParameter("@JobDescription", aCustomer.JobDescription))
 
 
@@ -171,10 +171,10 @@ Public Class clsCustomersDA
 
     ' Method Name:  UpdateRecord
     ' Purpose:      To update a record from the database for this entity
-    ' Parameter:    Object (aArtist) - clsArtists
+    ' Parameter:    Object (aCutomer) - clsCustomer
     ' Return:       Result (number of rows affected) - Integer
 
-    Public Shared Function UpdateRecord(ByVal aArtist As clsArtists) As Integer
+    Public Shared Function UpdateRecord(ByVal aCustomer As clsCustomers) As Integer
         Dim dbConnection As OleDbConnection = Nothing
         ' error handling
         Try
@@ -190,7 +190,7 @@ Public Class clsCustomersDA
             ' the connection if made
             ' create a SQL string
             Dim strQuery As String
-            strQuery = "UPDATE Artist SET [FirstName] = ?, [LastName] = ?, [Address] = ?, [City] = ?, [State] = ?, [PhoneNumber] = ?, [Date] = ?, [JobDescription] = ? WHERE [ArtistID] = ?"
+            strQuery = "UPDATE Customer SET [FirstName] = ?, [LastName] = ?, [Address] = ?, [City] = ?, [State] = ?, [PhoneNumber] = ?, [Date] = ?, [JobDescription] = ? WHERE [ArtistID] = ?"
 
             ' Setup ADO component
             ' create a data adapter object
@@ -207,11 +207,11 @@ Public Class clsCustomersDA
             dbCommand.Parameters.Add(New OleDbParameter("@City", aCustomer.City))
             dbCommand.Parameters.Add(New OleDbParameter("@State", aCustomer.State))
             dbCommand.Parameters.Add(New OleDbParameter("@PhoneNumber", aCustomer.PhoneNumber))
-            dbCommand.Parameters.Add(New OleDbParameter("@Date", aCustomer.Date))
+            dbCommand.Parameters.Add(New OleDbParameter("@Date", aCustomer.DDate))
             dbCommand.Parameters.Add(New OleDbParameter("@JobDescription", aCustomer.JobDescription))
 
             ' *********** adding your primary key field last *************************************
-            dbCommand.Parameters.Add(New OleDbParameter("@AccountID", aCustomer.AccountID))
+            dbCommand.Parameters.Add(New OleDbParameter("@ID", aCustomer.ID))
             ' ************************************************************************************
 
             ' configure the components

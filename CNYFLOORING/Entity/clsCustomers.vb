@@ -6,7 +6,7 @@ Public Class clsCustomers
 
     ' Private attributes
 
-    Private intAccountID As Integer
+    Private intID As Integer
     Private strFirstName As String
     Private strLastName As String
     Private strAddress As String
@@ -18,16 +18,16 @@ Public Class clsCustomers
 
     ' Property methods - getters and setters
 
-    Public Property AccountID() As Integer
+    Public Property ID() As Integer
         Get
-            Return intAccountID
+            Return intID
         End Get
         ' The automatic number will begin at 0 value
         Set(value As Integer)
             If value > 0 Then
-                intAccountID = value
+                intID = value
             Else
-                intAccountID = -1
+                intID = -1
             End If
         End Set
 
@@ -165,7 +165,7 @@ Public Class clsCustomers
     'Default Constructor
 
     Public Sub New()
-        intAccountID = 0
+        intID = 0
         strFirstName = ""
         strLastName = ""
         strAddress = ""
@@ -177,10 +177,10 @@ Public Class clsCustomers
     End Sub
 
     ' parameter based constructor
-    Public Sub New(ByVal aAccountID As Integer, ByVal aFirstName As String, ByVal aLastName As String,
+    Public Sub New(ByVal aID As Integer, ByVal aFirstName As String, ByVal aLastName As String,
                    ByVal aAddress As String, ByVal aCity As String, ByVal aState As String, ByVal aPhoneNumber As String,
                    ByVal aDate As Date, ByVal aJobDescription As String)
-        intAccountID = aAccountID
+        intID = aID
         strFirstName = aFirstName
         strLastName = aLastName
         strAddress = aAddress
@@ -200,7 +200,7 @@ Public Class clsCustomers
     ' Return:       A record of this entity - String
 
     Public Function classInfo() As String
-        Return "AccountID = " & AccountID() & vbCr & "FirstName = " & FirstName() & vbCr & "LastName = " & LastName() & vbCr _
+        Return "ID = " & ID() & vbCr & "FirstName = " & FirstName() & vbCr & "LastName = " & LastName() & vbCr _
             & "Address = " & Address() & vbCr & "City = " & City() & vbCr & "State = " & State() & vbCr & "PhoneNumber = " & PhoneNumber() & vbCr _
             & "Date= " & DDate() & vbCr & "JobDescription= " & JobDescription() & vbCr
     End Function
@@ -209,7 +209,7 @@ Public Class clsCustomers
     ' Purpose:      To obtain all the records from the database for this entity
     ' Parameter:    None
     ' Return:       All the records for this entity - Dataset
-    ' Change Log:   10/17/16 J. Loverme
+
 
     Public Shared Function GetRecords() As DataSet
         Try
@@ -225,7 +225,7 @@ Public Class clsCustomers
     ' Purpose:      To delete a record from the database for this entity
     ' Parameter:    Primary Key - String
     ' Return:       Result (number of rows affected) - Integer
-    ' Change Log:   10/17/16 J. Loverme
+
     Public Shared Function DeleteRecord(ByVal aPrimaryKey As String) As Integer
         Try
             Return clsCustomersDA.DeleteRecord(aPrimaryKey)
@@ -240,10 +240,10 @@ Public Class clsCustomers
     ' Purpose:      To add a record from the database for this entity
     ' Parameter:    Object (aEvent) - clsEvents
     ' Return:       Result (number of rows affected) - Integer
-    ' Change Log:   10/17/16 J. Loverme
-    Public Shared Function AddRecord(ByVal aEvent As clsCustomers) As Integer
+
+    Public Shared Function AddRecord(ByVal aCustomer As clsCustomers) As Integer
         Try
-            Return clsCustomersDA.AddRecord(aEvent)
+            Return clsCustomersDA.AddRecord(aCustomer)
         Catch ex As Exception
             MessageBox.Show("Error occurred in Class: clsCustomers. Method: AddRecord(Object). Error: " _
                             & ex.Message)
@@ -255,10 +255,10 @@ Public Class clsCustomers
     ' Purpose:      To update a record from the database for this entity
     ' Parameter:    Object (aEvent) - clsEvent
     ' Return:       Result (number of rows affected) - Integer
-    ' Change Log:   10/17/16 J. Loverme
-    Public Shared Function UpdateRecord(ByVal aEvent As clsCustomers) As Integer
+
+    Public Shared Function UpdateRecord(ByVal aCustomer As clsCustomers) As Integer
         Try
-            Return clsCustomersDA.UpdateRecord(aEvent)
+            Return clsCustomersDA.UpdateRecord(aCustomer)
         Catch ex As Exception
             MessageBox.Show("Error occurred in Class: clsCustomers. Method: UpdateRecord(Object). Error: " _
                             & ex.Message)
